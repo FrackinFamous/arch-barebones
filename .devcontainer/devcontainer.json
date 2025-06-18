@@ -1,6 +1,11 @@
 {
     "name": "Arch Dev Container",
     "build": { "dockerfile": "Dockerfile" },
+    "features": {
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest"
+        }
+    },
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
