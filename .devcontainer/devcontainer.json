@@ -1,4 +1,10 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/archlinux:latest",
-  "features": {}
+    "name": "Arch Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/archlinux:latest",
+    "features": {},
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "pacman -Syu --noconfirm && pacman -S --noconfirm base-devel git",
+    "remoteUser": "frack"
 }
