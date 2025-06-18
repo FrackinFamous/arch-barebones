@@ -1,14 +1,9 @@
 {
     "name": "Arch Dev Container",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "build": { "dockerfile": "Dockerfile" },
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
-    "features": {
-        "ghcr.io/devcontainers/features/sshd:1": {}
-    },
-    "postCreateCommand": "pacman -Syu --noconfirm && pacman -S --noconfirm base-devel git",
+    "postCreateCommand": "sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm base-devel git",
     "remoteUser": "frack"
 }
