@@ -1,7 +1,8 @@
 {
     "name": "Arch Dev Container",
-    "image": "mcr.microsoft.com/devcontainers/archlinux:latest",
-    "features": {},
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
