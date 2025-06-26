@@ -1,6 +1,6 @@
 {
     "name": "Arch Dev Container",
     "build": { "dockerfile": "Dockerfile" },
-    "postCreateCommand": ".devcontainer/post-create.sh",
+    "postCreateCommand": "~/.devcontainer/post-create.sh",
     "remoteUser": "frack"
 }
