@@ -9,3 +9,7 @@ RUN pacman -Syu --noconfirm && \
 USER frack
 WORKDIR /home/frack
 SHELL ["/bin/bash", "-c"]
+
+# Copy and chmod the post-create.sh
+COPY .devcontainer/post-create.sh /home/frack/.devcontainer/post-create.sh
+RUN chmod +x /home/frack/.devcontainer/post-create.sh
