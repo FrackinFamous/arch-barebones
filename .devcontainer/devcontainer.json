@@ -1,6 +1,6 @@
 {
     "name": "Arch Dev Container",
     "build": { "dockerfile": "Dockerfile" },
-    "postCreateCommand": "sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm git openssh",
+    "postCreateCommand": ".devcontainer/post-create.sh",
     "remoteUser": "frack"
 }
