@@ -6,11 +6,13 @@ RUN pacman -Syu --noconfirm && \
     useradd -m frack && \
     echo "frack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
+# Prepare .devcontainer and script as root
+RUN mkdir -p /home/frack/.devcontainer
+COPY .devcontainer/post-create.sh /home/frack/.devcontainer/post-create.sh
+RUN chown -R frack:frack /home/frack/.devcontainer && chmod +x /home/frack/.devcontainer/post-create.sh
+
 USER frack
 WORKDIR /home/frack
 SHELL ["/bin/bash", "-c"]
 
-# Copy and chmod the post-create.sh
-COPY .devcontainer/post-create.sh /home/frack/.devcontainer/post-create.sh
-RUN chown frack:frack /home/frack/.devcontainer/post-create.sh && chmod +x /home/frack/.devcontainer/post-create.sh
 RUN ls -l /home/frack/.devcontainer/
